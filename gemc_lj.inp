@@ -1,0 +1,130 @@
+# Run_Name
+gemc_lj.out
+!------------------------------------------------------------------------------
+
+# Sim_Type
+GEMC
+!------------------------------------------------------------------------------
+
+# Nbr_Species
+1
+!------------------------------------------------------------------------------
+
+# VDW_Style
+LJ   cut   2.0
+LJ   cut   2.0
+!------------------------------------------------------------------------------
+
+# Rcutoff_Low
+0.9
+!------------------------------------------------------------------------------
+
+# Mixing_Rule
+LB
+!------------------------------------------------------------------------------
+
+# Molecule_Files
+lj.mcf 700
+!----------------------------------------------------------one line per species
+
+# Box_Info
+2
+cubic
+9.00
+
+cubic
+15.
+!-------------------------------------------------------line 1: number of boxes
+!--------------------------------------------------------------line 2: box type
+!--------------------------------------------------------------line 3: box length size
+!--------------------------------------------------------------repeat for second box
+
+# Temperature_Info
+1.0 
+1.0
+!----------------------------------------------------------one temperature per box
+
+# Move_Probability_Info
+
+# Prob_Translation
+0.85
+0.15
+1.0
+!---- probability to perform translation
+!---- max displacement in box 1
+!---- max displacement in box 2
+
+# Prob_Volume
+0.03
+10.0
+10.0
+!---- probability to perform Volume change
+!---- maximum volume displacement box 1
+!---- maximum volume displacement box 2
+
+# Prob_Swap
+0.12
+cbmc
+!---- swap probability
+!---- insertion method
+
+# Done_Probability_Info
+!---------------------one line for each box and one entry/line for each species
+!-----------------------------------------each molecule moves per volume change
+
+# Start_Type
+make_config 600
+make_config 100
+!--------make_config: one line for each species and one entry/line for each box
+!------------------------------------------------------------read_old: filename
+!----------------------------------------------------------checkpoint: filename
+
+# Run_Type
+Equilibration 100 100
+!-------------------------Equilibration: update maximum widths every 100 steps/update maximum
+!-------------------------volume displacement every 100 steps
+
+# Simulation_Length_Info
+Units       Steps
+Prop_Freq   500
+Coord_Freq  1000
+Run         1000
+!------------------ simulation length every 2200 steps, XYZ output every 2200 steps, property
+!---------------------------------------output every 100 steps
+
+# Seed
+1211131639 1211131640
+!------------------------------------------------------------------------------
+
+# Property_Info 1
+Density
+Nmols
+Volume
+Pressure
+!------------------------------------------------------------------------------
+
+# Property_Info 2
+Density
+Nmols
+Volume
+Pressure
+!------------------------------------------------------------------------------
+
+
+# Fragment_Files
+species1/frag1/frag1.dat  1
+!---------------------------------------------------------one line per fragment
+
+# CBMC_Info
+kappa_ins 12
+rcut_cbmc 6.5 6.5
+!------------------------------------------------------------------------------
+
+# Average_Info
+1
+
+# Pair_Energy
+TRUE
+!------------------------------------------------------------------------------
+
+END
