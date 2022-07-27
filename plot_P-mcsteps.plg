@@ -1,0 +1,4 @@
+set xlabel 'N_{steps}'; set ylabel 'pressure'
+p 'gemc_lj.out.box1.prp' u 1:($5/166.054) pt 6 t 'Box1', 'gemc_lj.out.box2.prp' u 1:($5/166.054) pt 6 t 'Box2'
+
+pause -1
