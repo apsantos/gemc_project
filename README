@@ -1,0 +1,36 @@
+This directory contains all the files needed to run a short Gibbs Ensemble
+simulation of LJ particle at temperature T=2
+
+I. FILES REQUIRED TO RUN THE SIMULATION
+
+lj.pdb
+    Molecular configuration. Not very interesting for monotonics
+
+lj.mcf
+    Molecular force field information.
+
+gemc_lj.inp
+    The initial density for the liquid and vapor phases were chosen to be close
+    to the final density.
+
+species1/
+    Fragment file directory. Not very interesting for monotonics
+
+II. RUNNING THE SIMULATION
+
+The simulation can be run with the following command:
+
+> $CASSANDRA_DIR/Src/cassandra_gfortran.exe gemc_lj.inp
+
+III. OUTPUT FILES
+
+All output files are named gemc_lj.* , as defined in the input file. Please 
+see the Cassandra manual for more information on each output file type.
+
+*H box H matrix
+
+IV. Plotting files
+plt_rho-mcsteps.plg
+   run like: gnuplot plt_rho-mcsteps.plg
+   You may have to change the file names from gemc_lj.out.box1.prp to something different
+
