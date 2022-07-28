@@ -22,6 +22,11 @@ The simulation can be run with the following command:
 
 > $CASSANDRA_DIR/Src/cassandra_gfortran.exe gemc_lj.inp
 
+--or--
+If installed using conda:
+conda activate cassandra
+(cassandra) % cassandra.exe gemc_lj.inp
+
 III. OUTPUT FILES
 
 All output files are named gemc_lj.* , as defined in the input file. Please 
